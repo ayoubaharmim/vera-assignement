@@ -1,22 +1,35 @@
-# Vera Assignment
+# Vera Assignment – Streaming AI (Expo + TypeScript)
 
-This repository contains the code for the Vera assignment. It is a TypeScript project.
+This project is a mobile technical assignment built with **Expo**, **React Native**, and **TypeScript**.  
+It demonstrates **real-time Server-Sent Events (SSE)** streaming and incremental UI updates.
 
-## Table of Contents
+## Features
+- **Chunk-by-chunk SSE streaming** using `XMLHttpRequest` (`fetch()` cannot stream in React Native).
+- **Live incremental rendering** of streamed text.
+- **Tag parsing** for `<drug>...</drug>`, `<guideline>...</guideline>`, etc.
+- **Collapsible sections** for tagged content.
+- **Markdown rendering** for plain text.
+- **Clean light UI** matching the assignment mockups.
 
-- [About](#about)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Development](#development)
-- [Testing](#testing)
-- [Linting](#linting)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
 
-## About
+## Install & Run
 
-A short description of the project and its purpose. Replace this section with specific details about the Vera assignment and what the project implements.
+```bash
+npm install
+npm start
+```
+
+## Structure
+
+```bash
+src/
+hooks/useFetchSSE.ts # XHR SSE stream hook
+utils/segments.ts # tag parser → segments
+components/
+Collapsible.tsx
+ThinkingIndicator.tsx
+App.tsx
+```
 
 ## Prerequisites
 
@@ -39,54 +52,3 @@ npm install
 # or
 # yarn install
 ```
-
-## Development
-
-Start the development server or build/watch process (if applicable):
-
-```bash
-npm run build
-# or
-npm run dev
-```
-
-Adjust the commands above to match the scripts defined in package.json.
-
-## Testing
-
-Run tests (if available):
-
-```bash
-npm test
-# or
-npm run test:watch
-```
-
-## Linting
-
-Run linter (if available):
-
-```bash
-npm run lint
-```
-
-## Project Structure
-
-A suggested project layout; update to reflect the repository's real structure:
-
-````
-src/            # TypeScript source files
-  index.ts      # Entry point
-  ...
-tests/          # Test files
-package.json    # npm scripts and dependencies
-tsconfig.json   # TypeScript configuration
-````
-
-## Contributing
-
-If you'd like to contribute, please open an issue or a pull request. Describe the change you'd like to make and include tests when appropriate.
-
-## License
-
-Add license information here (e.g. MIT).
